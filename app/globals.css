@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 26 26 26;
+  --foreground: 255 255 255;
+  --card: 26 26 26;
+  --card-foreground: 255 255 255;
+  --popover: 26 26 26;
+  --popover-foreground: 255 255 255;
+  --primary: 195 146 236;
+  --primary-foreground: 255 255 255;
+  --secondary: 133 213 200;
+  --secondary-foreground: 26 26 26;
+  --muted: 48 48 48;
+  --muted-foreground: 150 150 150;
+  --accent: 48 48 48;
+  --accent-foreground: 255 255 255;
+  --destructive: 239 68 68;
+  --destructive-foreground: 255 255 255;
+  --border: 48 48 48;
+  --input: 48 48 48;
+  --ring: 195 146 236;
+  --radius: 0.5rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-[#1a1a1a] text-white;
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(26, 26, 26, 0.8);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #c392ec, #85d5c8);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #b57fe0, #6bc7b9);
+}
+
+/* Hide cursor when custom cursor is active */
+.custom-cursor-active {
+  cursor: none;
+}
+
+/* Gradient text utility */
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-[#c392ec] to-[#85d5c8];
+}
+
+/* Prevent FOUC (Flash of Unstyled Content) */
+.no-fouc {
+  @apply opacity-0;
+}
+.fouc-ready {
+  @apply opacity-100 transition-opacity duration-300;
+}
+
