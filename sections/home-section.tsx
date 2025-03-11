@@ -24,6 +24,16 @@ export default function HomeSection() {
     { icon: <Mail className="h-5 w-5" />, href: "mailto:hello@geetansh.com", label: "Email" },
   ]
 
+  const handleDownloadResume = () => {
+    // Create a link element
+    const link = document.createElement("a")
+    link.href = "/resume.pdf" // Path to your resume in the public folder
+    link.download = "Geetansh_Resume.pdf" // Name for the downloaded file
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
+
   return (
     <section id="home" ref={ref} className="min-h-screen flex flex-col justify-center pt-20 pb-10 relative">
       <motion.div
@@ -33,7 +43,7 @@ export default function HomeSection() {
         <div className="space-y-6">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
             <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-              Hi, I'm{" "}
+              Hi, I&apos;m{" "}
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#c392ec] to-[#85d5c8]">
                 Geetansh
               </span>
@@ -63,6 +73,7 @@ export default function HomeSection() {
             <Button
               variant="outline"
               className="border-white/20 text-white hover:bg-white/10 px-6 py-6 relative group overflow-hidden"
+              onClick={handleDownloadResume}
             >
               <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#c392ec]/20 to-[#85d5c8]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
               <span className="absolute -inset-1 bg-gradient-to-r from-[#c392ec] to-[#85d5c8] rounded-lg blur opacity-30 group-hover:opacity-50 animate-pulse-glow"></span>

@@ -111,7 +111,7 @@ export default function TestimonialsSection() {
                       key={i}
                       size={18}
                       className={
-                        i < testimonials[currentIndex].rating ? "fill-yellow-400 text-yellow-400" : "text-gray-600"
+                        i < testimonials[currentIndex].rating ? "fill-purple-400 text-purple-400" : "text-gray-600"
                       }
                     />
                   ))}
